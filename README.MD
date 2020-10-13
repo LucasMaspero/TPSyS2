@@ -14,8 +14,11 @@ Los caracteres **##** inician un comentario y terminan con nueva línea.
 Un identificador es una secuencia de letras y dígitos. El primer caracter debe ser una letra (minúscula o mayúscula, no importa) y luego pueden seguir con letras o dígitos decimales. 
 
 *identificador*:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*letra*
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*identificador letra*
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*identificador digito*
 
 *letra*: uno de
