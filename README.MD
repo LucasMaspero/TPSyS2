@@ -22,35 +22,44 @@ Un identificador es una secuencia de letras y dígitos. El primer caracter debe 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*identificador digito*
 
 *letra*: uno de
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**a b c d e f g h i j k l m n o p q r s t u v w x y z**
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**A B C D E F G H I J K L M N O P Q R S T U V W X Y Z**
 
 *digito*: uno de
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**0 1 2 3 4 5 6 7 8 9**
 
 ### Palabras reservadas
 Los siguientes identificadores son palabras reservadas y no se pueden utilizar de otra manera.
 
 *palabra-reservada*: uno de
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**programa &nbsp; &nbsp;&nbsp; declarar &nbsp; &nbsp;&nbsp; fin-prog**
 
 ### Constantes
 Hay una sola clase de consantes, y esta es la constante entera.
 
 *constante*:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*constante-entera*
 
 Una constante entera es una secuencia de dígitos.
 
 *constante-entera*:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*digito*
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*constante-entera digito*
 
 *digito*: uno de
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**0 1 2 3 4 5 6 7 8 9**
 
 ### Operadores
 *operador*: uno de
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\*&nbsp; &nbsp;&nbsp; /&nbsp; &nbsp;&nbsp; +&nbsp; &nbsp;&nbsp; -&nbsp; &nbsp;&nbsp; <-&nbsp; &nbsp;&nbsp;(&nbsp; &nbsp;&nbsp;)**
 
 ## Expresiones
@@ -59,18 +68,24 @@ Una constante entera es una secuencia de dígitos.
 Las expresiones primarias son identificadores, constantes o expresiones entre paréntesis.
 
 *expresion-primaria*:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*identificador*
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*constante*
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**(** *expresion* **)**
 
 ### Expresiones unarias
 Las expresiones con operadores unarios se agrupan de derecha a izquierda.
 
 *expresion-unaria*:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-primaria*
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*operador-unario expresion-unaria*
 
 *operador-unario*: uno de
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**-**
 
 El operador unario **-** invierte el signo del operando que esté a su derecha.
@@ -79,8 +94,11 @@ El operador unario **-** invierte el signo del operando que esté a su derecha.
 Los operadores multiplicativos **\*** y **/** se agrupan de izquierda a derecha.
 
 *expresion-multiplicativa*:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-unaria*
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-multiplicativa **\*** expresion-unaria*
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-multiplicativa **/** expresion-unaria*
 
 El operador binario **\*** denota multiplicación.
@@ -92,8 +110,11 @@ El operador binario **/** produce el cociente.
 Los operadores aditivos **+** y **-** se agrupan de izquierda a derecha.
 
 *expresion-aditiva*:
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-multiplicativa*
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-aditiva **+** expresion-multiplicativa*
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-aditiva **-** expresion-multiplicativa*
 
 El resultado del operador **+** es la suma de los operandos.
