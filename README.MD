@@ -1,6 +1,6 @@
 ## Introducción
 
-Este manual describe al lenguaje Mini.
+Este manual describe al lenguaje mini.
 
   
 
@@ -136,6 +136,30 @@ Operadores de multiplicación, división, suma, resta y asignación.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**0 1 2 3 4 5 6 7 8 9**
 
   
+
+
+## Programa
+
+Un programa correcto en lenguaje mini comienza con la palabra reservada **programa** y termina con la palabra reservada **fin-prog**. En medio debe haber una lista, eventualmente vacía de sentencias.
+
+
+  
+
+*programa*:
+
+  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**programa** **fin-prog**
+
+  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**programa** *lista-sentencias* **fin-prog**
+
+  
+
+
+## Sentencias
+
 
 
 
