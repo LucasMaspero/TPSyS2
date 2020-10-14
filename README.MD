@@ -161,7 +161,7 @@ Las expresiones primarias son identificadores, constantes o expresiones entre pa
 
   
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**(**  *expresion*  **)**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**(**  *expresion-aditiva*  **)**
 
   
 
