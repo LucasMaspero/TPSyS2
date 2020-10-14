@@ -12,7 +12,7 @@ Un programa consiste en una unidad de traducción almancenada en un archivo.
 
 ### Componentes léxicos (tokens)
 
-Existen varios componentes léxicos: identificadores, palabras reservadas, constantes y operadores. Los espacios, tabuladores, nueva linea, y comentarios, como se describen adelante (en su conjunto llamados "espacios en blanco") son ignorados, excepto los que separan componentes. Se requiere de algún espacio en blanco para separar identificadores de otra manera adyacentes, palabras reservadas, y constantes.
+Existen varios componentes léxicos: identificadores, palabras reservadas, constantes, operadores, caracteres de puntuación y otros. Los espacios, tabuladores, nueva linea, y comentarios, como se describen adelante (en su conjunto llamados "espacios en blanco") son ignorados, excepto los que separan componentes. Se requiere de algún espacio en blanco para separar identificadores de otra manera adyacentes, palabras reservadas, y constantes.
 
   
 
@@ -151,21 +151,78 @@ Un programa correcto en lenguaje mini comienza con la palabra reservada **progra
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**programa** **fin-prog**
 
-  
+
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**programa** *lista-sentencias* **fin-prog**
 
   
 
+*lista-sentencias*:
+
+  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*sentencia*
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*lista-sentencias* *sentencia*
+
 
 ## Sentencias
 
+Consideraremos que las declaraciones son un tipo de sentencia. Todas las sentencias y declaraciones finalizan con **;**. La declaración comienza con la palabra reservada **declarar** seguida del identificador y finaliza con **;**. Las variables son todas, implícitamente, enteras. Las sentencias son muy similares a las de lenguaje micro, de hecho tenemos los mismos tres tipos: **leer** es igual a micro, **escribir** también es igual y asignación es similar, pero el símbolo para la asignación es **<-** y cambian las expresiones.
+
+*sentencia*:
 
 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**declarar** *identificador* **;**
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**leer** **(** *lista-identificadores* **)** **;**
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**escribir** **(** *lista-expresiones* **)** **;**
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*identificador* **<-** *expresion* **;**
+
+
+
+*lista-identificadores*
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*identificador*
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*lista-identificadores* **,** *identificador*
+
+
+
+*lista-expresiones*
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion*
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*lista-expresiones* **,** *expresion*
 
 ## Expresiones
 
-  
+Una expresion es de por base una expresion aditiva.
+
+*expresion*:
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-aditiva*
 
 ### Expresiones primarias
 
@@ -185,7 +242,7 @@ Las expresiones primarias son identificadores, constantes o expresiones entre pa
 
   
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**(**  *expresion-aditiva*  **)**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**(**  *expresion*  **)**
 
   
 
