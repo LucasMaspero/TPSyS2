@@ -54,7 +54,7 @@ Los siguientes identificadores son palabras reservadas y no se pueden utilizar d
 
   
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**programa &nbsp; &nbsp;&nbsp; declarar &nbsp; &nbsp;&nbsp; fin-prog**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**programa &nbsp; &nbsp;&nbsp; declarar &nbsp; &nbsp;&nbsp; leer &nbsp; &nbsp;&nbsp; escribir &nbsp; &nbsp;&nbsp; fin-prog**
 
   
 
