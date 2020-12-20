@@ -12,13 +12,37 @@ Un programa consiste en una unidad de traducción almancenada en un archivo.
 
 ### Componentes léxicos (tokens)
 
-Existen varios componentes léxicos: identificadores, palabras reservadas, constantes, operadores, caracteres de puntuación y otros. Los espacios, tabuladores, nueva linea, y comentarios, como se describen adelante (en su conjunto llamados "espacios en blanco") son ignorados, excepto los que separan componentes. Se requiere de algún espacio en blanco para separar identificadores de otra manera adyacentes, palabras reservadas, y constantes.
+Existen varios componentes léxicos: palabras reservadas, identificadores, constantes, operadores, operador de asignacion y caracteres de puntuación. Los espacios, tabuladores, nueva linea, y comentarios, como se describen adelante (en su conjunto llamados "espacios en blanco") son ignorados, excepto los que separan componentes. Se requiere de algún espacio en blanco para separar identificadores de otra manera adyacentes, palabras reservadas, y constantes.
+
+En conclusión, se define token formalmente de la siguiente manera:
 
   
 
-### Comentarios
+*token*: uno de
 
-Los caracteres **##** inician un comentario y terminan con nueva línea. Los comentarios serán posteriormentes eliminados por el escaner.
+  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**palabra-reservada &nbsp; &nbsp;&nbsp; identificador &nbsp; &nbsp;&nbsp; constante &nbsp; &nbsp;&nbsp; operador &nbsp; &nbsp;&nbsp; operador-asignacion &nbsp; &nbsp;&nbsp; caracter-puntuacion**
+
+  
+
+
+
+### Palabras reservadas
+
+Los siguientes identificadores son palabras reservadas y no se pueden utilizar de otra manera.
+
+  
+
+*palabra-reservada*: uno de
+
+  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**programa &nbsp; &nbsp;&nbsp; declarar &nbsp; &nbsp;&nbsp; leer &nbsp; &nbsp;&nbsp; escribir &nbsp; &nbsp;&nbsp; fin-prog**
+
+  
+
+
 
 ### Identificadores
 
@@ -43,20 +67,6 @@ Un identificador es una secuencia de letras y dígitos. El primer caracter debe 
   
 
 
-
-### Palabras reservadas
-
-Los siguientes identificadores son palabras reservadas y no se pueden utilizar de otra manera.
-
-  
-
-*palabra-reservada*: uno de
-
-  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**programa &nbsp; &nbsp;&nbsp; declarar &nbsp; &nbsp;&nbsp; leer &nbsp; &nbsp;&nbsp; escribir &nbsp; &nbsp;&nbsp; fin-prog**
-
-  
 
 ### Constantes
 
@@ -89,7 +99,7 @@ Una constante entera es una secuencia de dígitos.
 
 ### Operadores
 
-Operadores de multiplicación, división, suma, resta y asignación.
+Operadores de multiplicación, división, suma, resta.
 
 *operador*: uno de
 
@@ -98,6 +108,7 @@ Operadores de multiplicación, división, suma, resta y asignación.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\*&nbsp; &nbsp;&nbsp; /&nbsp; &nbsp;&nbsp; +&nbsp; &nbsp;&nbsp; -**
 
 
+### Operador de Asignacion
 
 *operador-asignacion*: uno de
 
@@ -113,7 +124,6 @@ Operadores de multiplicación, división, suma, resta y asignación.
   
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**;&nbsp; &nbsp;&nbsp; ,&nbsp; &nbsp;&nbsp; (&nbsp; &nbsp;&nbsp; )**
-
 
 ### Otros
 
@@ -136,6 +146,12 @@ Operadores de multiplicación, división, suma, resta y asignación.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**0 1 2 3 4 5 6 7 8 9**
 
   
+
+
+### Comentarios
+
+Los caracteres **##** inician un comentario y terminan con nueva línea. Los comentarios serán posteriormentes eliminados por el escaner.
+
 
 
 ## Programa
@@ -170,7 +186,7 @@ Un programa correcto en lenguaje mini comienza con la palabra reservada **progra
 
 ## Sentencias
 
-Consideraremos que las declaraciones son un tipo de sentencia. Todas las sentencias y declaraciones finalizan con **;**. La declaración comienza con la palabra reservada **declarar** seguida del identificador y finaliza con **;**. Las variables son todas, implícitamente, enteras. Las sentencias son muy similares a las de lenguaje micro, de hecho tenemos los mismos tres tipos: **leer** es igual a micro, **escribir** también es igual y asignación es similar, pero el símbolo para la asignación es **<-** y cambian las expresiones.
+Consideraremos que las declaraciones son un tipo de sentencia. Todas las sentencias y declaraciones finalizan con **;**. La declaración comienza con la palabra reservada **declarar** seguida del identificador y finaliza con **;**. Las variables son todas, implícitamente, enteras. Además de la declaración, tenemos tres tipos de sentencias mas: **leer**, **escribir** y asignación cuyo símbolo es **<-**.
 
 *sentencia*:
 
@@ -216,21 +232,62 @@ Consideraremos que las declaraciones son un tipo de sentencia. Todas las sentenc
 
 ## Expresiones
 
-Una expresion es de por base una expresion aditiva.
+### Expresion
+
+Una expresion es un termino o bien una expresion "combinada" con un termino utilizando algun operador de suma **+** o resta **-**.
 
 *expresion*:
 
+  
 
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-aditiva*
-
-### Expresiones primarias
-
-Las expresiones primarias son identificadores, constantes o expresiones entre paréntesis.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*termino*
 
   
 
-*expresion-primaria*:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion* **+** *termino*
+
+  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion* **-** *termino*
+
+
+
+El resultado del operador **+** es la suma de los operandos.
+
+  
+
+El resultado del operador **-** es la resta de los operandos.
+  
+### Termino
+
+Un termino es un valor o bien un termino "combinado" con un valor utilizando algun operador de multiplicacion **\*** o division **/**.
+
+*termino*:
+
+  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*valor*
+
+  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*termino* **\*** *valor*
+
+  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*termino* **/** *valor*
+
+  
+El operador binario **\*** denota multiplicación.
+
+  
+
+El operador binario **/** produce el cociente.
+
+
+### Valor
+
+Un valor puede ser un identificador, una constante, una expresion encerrada entre parentesis o bien un operador unario **-** seguido de un valor.
+
+*valor*:
 
   
 
@@ -242,95 +299,11 @@ Las expresiones primarias son identificadores, constantes o expresiones entre pa
 
   
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**(**  *expresion*  **)**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**(** *expresion* **)**
 
   
 
-### Expresiones unarias
-
-Las expresiones con operadores unarios se agrupan de derecha a izquierda.
-
-  
-
-*expresion-unaria*:
-
-  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-primaria*
-
-  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*operador-unario expresion-unaria*
-
-  
-
-*operador-unario*: uno de
-
-  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**-**
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**-** *valor*
   
 
 El operador unario **-** invierte el signo del operando que esté a su derecha.
-
-  
-
-### Expresiones multiplicativas
-
-Los operadores multiplicativos **\*** y **/** se agrupan de izquierda a derecha.
-
-  
-
-*expresion-multiplicativa*:
-
-  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-unaria*
-
-  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-multiplicativa **\*** expresion-unaria*
-
-  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-multiplicativa **/** expresion-unaria*
-
-  
-
-El operador binario **\*** denota multiplicación.
-
-  
-
-El operador binario **/** produce el cociente.
-
-  
-  
-
-### Expresiones aditivas
-
-Los operadores aditivos **+** y **-** se agrupan de izquierda a derecha.
-
-  
-
-*expresion-aditiva*:
-
-  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-multiplicativa*
-
-  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-aditiva **+** expresion-multiplicativa*
-
-  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*expresion-aditiva **-** expresion-multiplicativa*
-
-  
-
-El resultado del operador **+** es la suma de los operandos.
-
-  
-
-El resultado del operador **-** es la resta de los operandos.
