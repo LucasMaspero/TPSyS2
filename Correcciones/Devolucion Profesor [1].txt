@@ -1,0 +1,5 @@
+Bastante bien, pero hay que hacerle algunos ajustes:
+
+Definan Token y den a la lista (si bien a lo largo del documento está, pongan todo junto como una producción)
+Asignación NO es un operador, es un token en si mismo, diferente de los demás.
+En expresión hacen algo de lío, o la menos no está ordenado, vayan de primaria hasta expresión, o de expresión hasta primaría (preferiría esta, más allá de que C use la otra)
